@@ -1,0 +1,52 @@
+.DS_Store
+node_modules
+/screenshots
+/dist
+dist.zip
+dist_electron
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+/components.d.ts
+
+# // "@rushstack/eslint-patch": "^1.1.4",
+#     // "@types/fs-extra": "^9.0.13",
+#     // "@types/node": "^16.11.56",
+#     // "@vitejs/plugin-vue": "^3.0.1",
+#     // "@vitejs/plugin-vue-jsx": "^2.0.0",
+#     // "@vue/eslint-config-prettier": "^7.0.0",
+#     // "@vue/eslint-config-typescript": "^11.0.0",
+#     // "@vue/tsconfig": "^0.1.3",
+#     // "dotenv": "^16.0.1",
+#     // "eslint": "^8.21.0",
+#     // "eslint-plugin-vue": "^9.3.0",
+#     // "esno": "^0.16.3",
+#     // "fs-extra": "^10.1.0",
+#     // "picocolors": "^1.0.0",
+#     // "prettier": "^2.7.1",
+#     // "rollup": "^2.78.1",
+#     // "sass": "^1.54.5",
+#     // "typescript": "~4.7.4",
+#     // "unplugin-vue-components": "^0.22.4",
+#     // "vite": "^3.0.4",
+#     // "vite-plugin-compression": "^0.5.1",
+#     // "vite-plugin-html": "^3.2.0",
+#     // "vite-plugin-mock": "^2.9.6",
+#     // "vite-plugin-vue-setup-extend": "^0.4.0",
+#     // "vue-tsc": "^0.39.5"
