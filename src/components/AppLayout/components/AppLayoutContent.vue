@@ -61,7 +61,7 @@
     flex-grow: 1;
     box-sizing: border-box;
     width: 100%;
-    height: 0;
+    min-height: 0;
     transition-property: padding-left;
   }
 </style>

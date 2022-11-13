@@ -61,7 +61,7 @@
       </template>
       <div ref="layoutContentRef" :class="`${getPrefixCls}-content`">
         <NScrollbar trigger="none" :class="`${getPrefixCls}-content-scroll`">
-          <LayoutMain class="flex-grow w-full h-0" />
+          <LayoutMain />
         </NScrollbar>
       </div>
       <template #footer> </template>

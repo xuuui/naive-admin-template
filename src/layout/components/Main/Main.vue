@@ -1,16 +1,16 @@
 <template>
   <div>
     <RouterView>
-      <template #default="{ Component, route }">
+      <template #default="{ Component, route: r }">
         <transition
           :name="getTranstionEnable && !pageLoaded ? getTranstionName : ''"
           mode="out-in"
           appear
         >
           <keep-alive v-if="keepAliveRoutes" :include="keepAliveRoutes">
-            <component :is="Component" :key="route.name" />
+            <component :is="Component" :key="r.name" />
           </keep-alive>
-          <component v-else :is="Component" :key="route.name" />
+          <component v-else :is="Component" :key="r.name" />
         </transition>
       </template>
     </RouterView>
