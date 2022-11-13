@@ -12,7 +12,7 @@
         class="h-full"
         v-bind="crudBinding"
       >
-        <template #pagination-left v-if="hasActionPermission('del')">
+        <template #pagination-left v-if="hasActionPermission('DEL')">
           <n-tooltip>
             <template #trigger>
               <n-button
@@ -30,7 +30,7 @@
             批量删除
           </n-tooltip>
         </template>
-        <crud-empty />
+        <crud-empty :empty="isEmpty" />
       </fs-crud>
     </n-card>
     <n-card content-style="padding: 0;" class="lg:w-4/7 p-4 w-full relative">
@@ -64,7 +64,7 @@
       crudExpose,
       crudOptions: crudOptions,
       currentRowChange() {
-        unref(dictItemRef).doRefresh()
+        unref(dictItemRef)?.doRefresh()
       },
     })
 </script>

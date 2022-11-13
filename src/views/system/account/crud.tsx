@@ -57,12 +57,12 @@ export function createCrudOptions(): CrudOptions {
             show: compute(({ row }: { row: AccountModel }) => {
               return row?.identity?.isSuperAdmin
                 ? false
-                : hasActionPermission('del', !!row.isSys)
+                : hasActionPermission('DEL', !!row.isSys)
             }),
             disabled: compute(({ row }: { row: AccountModel }) => {
               return row?.identity?.isSuperAdmin
                 ? true
-                : !hasActionPermission('del', !!row.isSys)
+                : !hasActionPermission('DEL', !!row.isSys)
             }),
           },
         },
@@ -80,7 +80,7 @@ export function createCrudOptions(): CrudOptions {
             disabled(row: AccountModel) {
               return row?.identity?.isSuperAdmin
                 ? true
-                : !hasActionPermission('del', !!row.isSys)
+                : !hasActionPermission('DEL', !!row.isSys)
             },
           },
         },

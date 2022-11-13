@@ -7,9 +7,7 @@ import { PermissionAction } from '@/enums/sysEnum'
 
 export function useCrudPermission(prefix: string, _extra?: any) {
   const userStore = useUserStore()
-
   const { compute } = useCompute()
-
   const { hasPermission } = usePermission()
 
   const getPermissionCode = (action: PermissionAction): string => {
@@ -33,40 +31,40 @@ export function useCrudPermission(prefix: string, _extra?: any) {
           _select: {
             column: {
               disabled(row: BasicEntityModel & Recordable) {
-                return !hasActionPermission('del', row.isSys)
+                return !hasActionPermission('DEL', row.isSys)
               },
             },
           },
         },
         actionbar: {
           buttons: {
-            add: { show: hasActionPermission('add') },
+            add: { show: hasActionPermission('ADD') },
           },
         },
         rowHandle: {
           buttons: {
             edit: {
               show: compute(({ row }) => {
-                return hasActionPermission('edit', row.isSys)
+                return hasActionPermission('EDIT', row.isSys)
               }),
               disabled: compute(({ row }) => {
-                return !hasActionPermission('edit', row.isSys)
+                return !hasActionPermission('EDIT', row.isSys)
               }),
             },
             remove: {
               show: compute(({ row }) => {
-                return hasActionPermission('del', row.isSys)
+                return hasActionPermission('DEL', row.isSys)
               }),
               disabled: compute(({ row }) => {
-                return !hasActionPermission('del', row.isSys)
+                return !hasActionPermission('DEL', row.isSys)
               }),
             },
             view: {
               show: compute(({ row }) => {
-                return hasActionPermission('view', row.isSys)
+                return hasActionPermission('VIEW', row.isSys)
               }),
               disabled: compute(({ row }) => {
-                return !hasActionPermission('view', row.isSys)
+                return !hasActionPermission('VIEW', row.isSys)
               }),
             },
           },
@@ -78,7 +76,7 @@ export function useCrudPermission(prefix: string, _extra?: any) {
       options.columns.isSys.form = merge({}, options.columns.isSys.form, {
         value: 0,
         show: options.columns.isSys.form?.show
-          ? options.columns.isSys.form?.show
+          ? options.columns.isSys.form.show
           : !!userStore.getIsSuperAdmin,
       })
     }

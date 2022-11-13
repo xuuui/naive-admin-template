@@ -1,7 +1,7 @@
 <template>
   <n-card content-style="padding: 0;" class="px-4">
     <fs-crud ref="crudRef" v-bind="crudBinding">
-      <template #pagination-left v-if="hasActionPermission('del')">
+      <template #pagination-left v-if="hasActionPermission('DEL')">
         <n-tooltip>
           <template #trigger>
             <n-button
@@ -19,7 +19,7 @@
           批量删除
         </n-tooltip>
       </template>
-      <crud-empty />
+      <crud-empty :empty="isEmpty" />
     </fs-crud>
   </n-card>
 </template>

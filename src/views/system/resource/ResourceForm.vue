@@ -116,8 +116,8 @@
       class="w-full mr-10px"
       v-if="
         isUpdate
-          ? hasActionPermission('edit', curResource?.isSys)
-          : hasActionPermission('add', curResource?.isSys)
+          ? hasActionPermission('EDIT', curResource?.isSys)
+          : hasActionPermission('ADD', curResource?.isSys)
       "
     >
       <n-button

@@ -19,7 +19,7 @@ export enum EDictType {
 
 export const HTTP_HEADER_TOKEN = 'HTTP-ACCESS-TOKEN'
 
-export type PermissionAction = 'add' | 'view' | 'edit' | 'del'
+export type PermissionAction = 'ADD' | 'VIEW' | 'EDIT' | 'DEL'
 
 export enum EOpertateType {
   LOGIN = 'login',

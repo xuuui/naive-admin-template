@@ -32,7 +32,6 @@ export function useCrud<T extends BasicEntityModel & Recordable>({
   permissionScope,
   crudOptions,
   crudExpose,
-  crudBinding,
   currentRowChange,
   columns,
   exportOptions,
@@ -41,6 +40,7 @@ export function useCrud<T extends BasicEntityModel & Recordable>({
   const { buildCrudPermission, hasActionPermission } =
     useCrudPermission(permissionScope)
   const { message, createConfirm } = useWeb()
+
   const currentRow = ref<T>()
   const selectedRowKeys = ref<Array<number | string>>([])
   const { bool: isEmpty, setBool: setIsEmpty } = useBoolean()
@@ -105,6 +105,7 @@ export function useCrud<T extends BasicEntityModel & Recordable>({
         },
       }
     }
+
     if (columns?.createdAt) {
       base.columns.createdAt = {
         title: '创建时间',
@@ -161,7 +162,7 @@ export function useCrud<T extends BasicEntityModel & Recordable>({
                   jsonToSheetXlsx({
                     data: isFunction(exportOptions?.transformFn)
                       ? unref(tableData).map((s) => {
-                          return exportOptions!.transformFn!(s)
+                          return exportOptions.transformFn!(s)
                         })
                       : unref(tableData),
                     ...exportOptions,
@@ -195,6 +196,7 @@ export function useCrud<T extends BasicEntityModel & Recordable>({
         },
       },
     )
+
     for (const key in opts.columns) {
       const item = opts.columns[key]
       item.column = merge(

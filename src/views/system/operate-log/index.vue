@@ -1,7 +1,7 @@
 <template>
   <n-card content-style="padding: 0;" class="px-4">
     <fs-crud ref="crudRef" v-bind="crudBinding">
-      <crud-empty />
+      <crud-empty :empty="isEmpty" />
     </fs-crud>
   </n-card>
 </template>
@@ -18,7 +18,7 @@
   const crudBinding = ref()
   const { crudExpose } = useExpose({ crudRef, crudBinding })
   const { crudOptions } = createCrudOptions()
-  useCrud({
+  const { isEmpty } = useCrud({
     permissionScope: 'OperateLog',
     crudExpose,
     crudOptions,

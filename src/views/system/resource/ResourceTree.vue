@@ -23,7 +23,7 @@
           @click="handleCreate(null)"
           type="primary"
           size="small"
-          v-if="hasActionPermission('add')"
+          v-if="hasActionPermission('ADD')"
         >
           添加
         </n-button>
@@ -215,14 +215,14 @@
     }
     return (
       <>
-        {hasPerm('add') && (
+        {hasPerm('ADD') && (
           <div {...addProps}>
             <NIcon size={16} color="var(--primary-color)">
               <PlusSquareTwotone />
             </NIcon>
           </div>
         )}
-        {hasPerm('del') && (
+        {hasPerm('DEL') && (
           <div {...delProps}>
             <NIcon size={16} color="var(--error-color)">
               <DeleteTwotone />
